@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="uiBundle.estate.controller" class="Estate\UiBundle\Controller\EstateController">
+            <argument type="service" id="uiBundle.estate.repository" />
+            <call method="setContainer">
+                <argument type="service" id="service_container" />
+            </call>
+        </service>
+
+        <service id="uiBundle.estate.repository"
+            class="Estate\UiBundle\Repository\EstateRepository"
+            factory-service="doctrine.orm.default_entity_manager"
+            factory-method="getRepository">
+            <argument>Estate\UiBundle\Entity\Estate</argument>
+        </service>
+    </services>
+</container>

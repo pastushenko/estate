@@ -1,0 +1,35 @@
+.content {
+    margin-bottom: 40px;
+}
+
+.odd {
+    background-color: #ECECEC;
+}
+
+.top-offset {
+    margin: 10px 0;
+}
+
+label {
+    vertical-align: top;
+}
+
+.hidden {
+    display: none;
+}
+
+.vacancy-list td, .vacancy-list th {
+    padding: 3px 10px;
+}
+
+.add-vacancy-block {
+    display: none;
+    margin-bottom: 50px;
+}
+
+.show-vacancy-form-btn, .hide-vacancy-form-btn {
+    text-decoration: underline;
+}
+button.hide-vacancy-form-btn {
+    margin-left: 20px;
+}

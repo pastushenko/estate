@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Estate\UiBundle\Entity\Address" table="address" repository-class="Estate\UiBundle\Repository\AddressRepository">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO" />
+        </id>
+        <field name="localityName" type="text" column="locality_name" length="255" nullable="true"/>
+        <field name="street" type="text" column="street" length="255" nullable="true"/>
+        <field name="houseNumber" type="text" column="house_number" length="10" nullable="true"/>
+        <field name="houseBlock" type="text" column="house_block" length="10" nullable="true"/>
+        <field name="metroTimeMinutes" type="integer" column="metro_time_minutes" length="2" nullable="true"/>
+        <field name="metroTransportType" type="integer" column="metro_transport_type" length="1" nullable="true"/>
+
+        <many-to-one field="metro" target-entity="Estate\UiBundle\Entity\Metro" />
+        <many-to-one field="district" target-entity="Estate\UiBundle\Entity\District" />
+        <many-to-one field="region" target-entity="Estate\UiBundle\Entity\Region" />
+    </entity>
+</doctrine-mapping>

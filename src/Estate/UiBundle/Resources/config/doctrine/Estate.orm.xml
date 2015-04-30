@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Estate\UiBundle\Entity\Estate" table="estate" repository-class="Estate\UiBundle\Repository\EstateRepository">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO" />
+        </id>
+        <field name="dealType" type="integer" column="deal_type" length="1" nullable="false"/>
+        <field name="estateSubtype" type="integer" column="estate_sub_type" length="2" nullable="false"/>
+        <field name="isNewBuilding" type="integer" column="is_new_building" length="1" nullable="false"/>
+        <field name="buildingName" type="text" column="building_name" length="255" nullable="true"/>
+
+        <one-to-one field="address" target-entity="Estate\UiBundle\Entity\Address" inversed-by="estate">
+            <cascade><cascade-remove /></cascade>
+            <join-column name="address_id" referenced-column-name="id" on-delete="CASCADE" on-update="CASCADE"/>
+        </one-to-one>
+    </entity>
+</doctrine-mapping>

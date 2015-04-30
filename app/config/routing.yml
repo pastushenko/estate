@@ -1,0 +1,3 @@
+EstateUiBundle:
+    prefix:   /
+    resource: "@EstateUiBundle/Resources/config/routing.yml"
